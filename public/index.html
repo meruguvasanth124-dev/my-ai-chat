@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>MyAI</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <aside class="sidebar">
+
+    <div class="logo">
+      <span>✦</span>
+      MyAI
+    </div>
+
+    <button class="new-chat" onclick="newChat()">
+      ＋ New Chat
+    </button>
+
+    <div class="history-title">
+      Conversations
+    </div>
+
+    <div id="history"></div>
+
+    <div class="sidebar-bottom">
+      <button onclick="toggleTheme()">🌙 Theme</button>
+      <button onclick="clearChats()">🗑 Clear</button>
+    </div>
+
+  </aside>
+
+
+  <main class="main">
+
+    <header class="topbar">
+
+      <button class="menu" onclick="toggleSidebar()">
+        ☰
+      </button>
+
+      <select id="model">
+        <option value="gpt-5">Smart</option>
+        <option value="gpt-5-mini">Fast</option>
+      </select>
+
+    </header>
+
+
+    <section class="chat-area" id="chatArea">
+
+      <div class="welcome">
+
+        <div class="welcome-icon">
+          ✦
+        </div>
+
+        <h1>How can I help you?</h1>
+
+        <p>
+          Ask questions, learn programming, write content,
+          or explore ideas.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <section class="input-section">
+
+      <div class="input-box">
+
+        <textarea
+          id="message"
+          placeholder="Message MyAI..."
+          rows="1"
+          onkeydown="handleKey(event)"
+        ></textarea>
+
+        <div class="input-actions">
+
+          <label class="attach">
+            ＋
+            <input
+              type="file"
+              id="file"
+              hidden
+              onchange="fileSelected()"
+            >
+          </label>
+
+          <button onclick="startVoice()">
+            🎤
+          </button>
+
+          <button
+            class="send"
+            onclick="sendMessage()"
+          >
+            ➤
+          </button>
+
+        </div>
+
+      </div>
+
+      <div class="limit">
+        Free plan • 150 requests/day
+      </div>
+
+    </section>
+
+  </main>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
